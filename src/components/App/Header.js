@@ -1,22 +1,18 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import Shirt from "../../assets/tshirt.png";
 
-const Home = () => {
+const Header = () => {
   const history = useHistory();
   const [searchVal, setSearchVal] = useState();
   console.log(searchVal);
   return (
     <Wrapper>
       <Logo>BandT</Logo>
-      <HomeBody>
-        <img src={Shirt} width="300px" />
-        <Input type="text" onChange={(e) => setSearchVal(e.target.value)} />
-        <Button onClick={() => history.push(`/artists/${searchVal}`)}>
-          Take me to Merch!
-        </Button>
-      </HomeBody>
+      <Input type="text" onChange={(e) => setSearchVal(e.target.value)} />
+      <button onClick={() => history.push(`/artists/${searchVal}`)}>
+        Take me to Merch!
+      </button>
     </Wrapper>
   );
 };
@@ -28,9 +24,6 @@ const Wrapper = styled.div`
   width: 100vw;
   margin: auto;
   height: 100vh;
-`;
-const HomeBody = styled.div`
-  text-align: center;
 `;
 
 const Logo = styled.p`
@@ -46,13 +39,7 @@ const Logo = styled.p`
   font-family: "Bungee Shade", cursive;
 `;
 
-const Input = styled.input`
-  margin: 20px auto;
-  display: block;
-`;
-const Button = styled.button`
-  margin: auto;
-  display: block;
-`;
+const Input = styled.input``;
+const Button = styled.button``;
 
-export default Home;
+export default Header;

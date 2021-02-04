@@ -9,6 +9,7 @@ import {
 import GlobalStyle from "./GlobalStyles";
 import ArtistRoute from "./ArtistRoute";
 import Home from "./Home";
+import Header from "./Header";
 import {
   requestAccessToken,
   receiveAccessToken,
@@ -35,6 +36,7 @@ const App = () => {
   return (
     <Router>
       <GlobalStyle />
+
       <Switch>
         <Route exact path="/artists/:id">
           <ArtistRoute />
